@@ -3,7 +3,7 @@ object frmListaContatos: TfrmListaContatos
   Top = 0
   Caption = 'Lista de Contatos'
   ClientHeight = 216
-  ClientWidth = 447
+  ClientWidth = 583
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,6 +13,38 @@ object frmListaContatos: TfrmListaContatos
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
+  object Panel2: TPanel
+    Left = 207
+    Top = 0
+    Width = 376
+    Height = 216
+    Align = alRight
+    Caption = 'Panel2'
+    Padding.Left = 5
+    Padding.Top = 5
+    Padding.Right = 5
+    Padding.Bottom = 5
+    TabOrder = 0
+    object lvlLista: TListView
+      Left = 0
+      Top = 6
+      Width = 369
+      Height = 204
+      Columns = <
+        item
+          Caption = 'Nome'
+          Width = 160
+        end
+        item
+          Alignment = taRightJustify
+          Caption = 'E-mail'
+          Width = 200
+        end>
+      TabOrder = 0
+      ViewStyle = vsReport
+      OnDeletion = lvlListaDeletion
+    end
+  end
   object Panel1: TPanel
     Left = 0
     Top = 0
@@ -24,7 +56,10 @@ object frmListaContatos: TfrmListaContatos
     Padding.Top = 5
     Padding.Right = 5
     Padding.Bottom = 5
-    TabOrder = 0
+    TabOrder = 1
+    ExplicitLeft = 6
+    ExplicitTop = 6
+    ExplicitHeight = 204
     object lblNome: TLabel
       Left = 6
       Top = 6
@@ -32,8 +67,6 @@ object frmListaContatos: TfrmListaContatos
       Height = 13
       Align = alTop
       Caption = 'Nome:'
-      ExplicitLeft = 1
-      ExplicitTop = 1
       ExplicitWidth = 31
     end
     object lblEmail: TLabel
@@ -43,8 +76,6 @@ object frmListaContatos: TfrmListaContatos
       Height = 13
       Align = alTop
       Caption = 'E-mail:'
-      ExplicitLeft = 40
-      ExplicitTop = 120
       ExplicitWidth = 32
     end
     object edtNome: TEdit
@@ -54,9 +85,6 @@ object frmListaContatos: TfrmListaContatos
       Height = 21
       Align = alTop
       TabOrder = 0
-      ExplicitLeft = 32
-      ExplicitTop = 72
-      ExplicitWidth = 121
     end
     object edtEmail: TEdit
       Left = 6
@@ -65,21 +93,17 @@ object frmListaContatos: TfrmListaContatos
       Height = 21
       Align = alTop
       TabOrder = 1
-      ExplicitLeft = 96
-      ExplicitTop = 152
-      ExplicitWidth = 121
     end
-    object btnCadastrar: TButton
+    object btnAdicionar: TButton
       Left = 6
       Top = 105
       Width = 189
       Height = 35
       Align = alBottom
-      Caption = 'Cadastrar'
+      Caption = 'Adicionar'
       TabOrder = 2
-      ExplicitLeft = 1
-      ExplicitTop = 118
-      ExplicitWidth = 191
+      OnClick = btnAdicionarClick
+      ExplicitTop = 93
     end
     object btnRemover: TButton
       Left = 6
@@ -89,34 +113,19 @@ object frmListaContatos: TfrmListaContatos
       Align = alBottom
       Caption = 'Remover'
       TabOrder = 3
-      ExplicitLeft = 1
-      ExplicitTop = 149
-      ExplicitWidth = 191
+      OnClick = btnRemoverClick
+      ExplicitTop = 128
     end
-    object btnListar: TButton
+    object btnExibir: TButton
       Left = 6
       Top = 175
       Width = 189
       Height = 35
       Align = alBottom
-      Caption = 'Listar'
+      Caption = 'Exibir'
       TabOrder = 4
-      ExplicitLeft = 1
-      ExplicitTop = 184
-      ExplicitWidth = 191
+      OnClick = btnExibirClick
+      ExplicitTop = 163
     end
-  end
-  object Panel2: TPanel
-    Left = 207
-    Top = 0
-    Width = 240
-    Height = 216
-    Align = alRight
-    Caption = 'Panel2'
-    Padding.Left = 5
-    Padding.Top = 5
-    Padding.Right = 5
-    Padding.Bottom = 5
-    TabOrder = 1
   end
 end
